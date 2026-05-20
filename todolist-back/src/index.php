@@ -4,28 +4,26 @@ require_once 'model.php';
 $method = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
 
+
 global $database;
 
-switch(true){
-    case $method == 'GET' && $uri == "/todo"{
-        function readList();
-            break;
-    }
+switch (true) {
+    case $method == 'GET' && $uri == "/todolist":
+        readList();
+        break;
 
-    case $method == 'GET' && $uri == "/todo"{
-        function readTask($taskId);
-            break;
-    }
+    case $method == 'GET' && $uri == "/todo":
+        readTask($_GET["id"]);
+        break;
 
-    case $method == 'POST' && $uri == "/todolist"{
-        function insertList();
-            break;
-    }
 
-    default : 
-            http_response_code(404);
-            echo json_encode(["message" => "Route non trouvée"]);
+    case $method == 'POST' && $uri == "/todolist":
+        insertList();
+        break;
 
+    default:
+        http_response_code(404);
+        echo json_encode(["message" => "Route non trouvée"]);
 }
 // switch ($method) { 
 //     case 'GET': 

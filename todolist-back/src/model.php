@@ -18,7 +18,7 @@ function connexion() : PDO {
 
 $database = connexion();
 
-function readListT(){
+function readList(){
     $stmt = $database->prepare('SELECT * FROM todolist');
             $stmt->execute(array());
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
