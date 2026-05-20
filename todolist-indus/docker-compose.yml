@@ -19,6 +19,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
+
+  php:
+    build:
+      context: ../todolist-back/
+      dockerfile: Dockerfile
+    ports:
+      - "7564:80"
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
