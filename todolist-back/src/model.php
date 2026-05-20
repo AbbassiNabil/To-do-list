@@ -43,7 +43,7 @@ function insertList()
 
 function updList()
 {
-    global $database;
+    global $database; //Obligatoire pour les variables créer en extérieur de la fonction
     $body = json_decode(file_get_contents('php://input'), true);
     $stmt = $database->prepare("UPDATE todo SET title = :title, description = :description, done = :done WHERE id = :id");
     $stmt->execute([

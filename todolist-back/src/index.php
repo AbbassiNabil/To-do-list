@@ -12,11 +12,11 @@ switch(true){
         echo readList($database);
         break;
         
-    case $method == 'POST' && $uri == "/todolist" :
+    case $method == 'POST' && $_POST["action"] == "/todolist" :
         insertList();
             break;
 
-    case $method == 'PUT' && $uri == "/todolist/{uuid}/todo" :
+    case $method == 'PUT' && $_PUT["action"] == "/todolist/{uuid}/todo" :
         updList();
         break;
 
