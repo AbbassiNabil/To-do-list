@@ -5,6 +5,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
 $parts = explode('/', $uri);
 
+
 global $database;
 switch(true){
     case $method == 'GET' && $_GET["action"] == "/todolist":
@@ -22,6 +23,13 @@ switch(true){
         http_response_code(404);
         echo json_encode(["message" => "Route non trouvée"]);
 
+    case $method == 'POST' && $uri == "/todolist":
+        insertList();
+        break;
+
+    default:
+        http_response_code(404);
+        echo json_encode(["message" => "Route non trouvée"]);
 }
 // switch ($method) { 
 //     case 'GET': 
