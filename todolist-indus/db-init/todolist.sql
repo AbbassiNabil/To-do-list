@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS `todo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO `todo` (`id`, `todolist_id`, `title`, `desc`) VALUES
-(UUID(), '1787adca-2cf6-4cd7-afa1-20af702cd431', 'apples', 'Buy 4'),
-(UUID(), '1787adca-2cf6-4cd7-afa1-20af702cd431', 'steak', 'Buy 1');
+('cbc10bfd-02b2-4db9-92ac-80714f882f4a', '1787adca-2cf6-4cd7-afa1-20af702cd431', 'apples', 'Buy 4'),
+('125f181a-18ed-4936-ac64-7d8e48e594b8', '1787adca-2cf6-4cd7-afa1-20af702cd431', 'steak', 'Buy 1'),
+(UUID(), '1787adca-2cf6-4cd7-afa1-20af702cd431', 'bread', 'Buy 3');
 
