@@ -30,10 +30,16 @@ switch ($method) {
                 echo json_encode(["message" => "Created - ressource créée avec succès"]);
         } else {
            http_response_code(404);
-                echo json_encode(["message" => "Created - Route non trouvée"]); 
+                echo json_encode(["message" => "Route non trouvée"]); 
         }
         break;
-    case 'PUT': 
+
+    case 'PUT': //Modification de la page existante
+        if($uri === "PUT /todolist/{uuid}/todo"){
+
+        } else{
+
+        }
         break; 
     case 'DELETE': 
         break; 
