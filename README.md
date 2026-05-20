@@ -1,6 +1,5 @@
 # To-do-list
 
-````markdown
 # 🚀 TaskFlow API & Dashboard
 
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](LICENSE)
@@ -23,12 +22,11 @@ L'application repose sur deux concepts clés structurés via l'API :
 
 ### Prérequis
 
-Assurez-vous d'avoir installé [Node.js](https://nodejs.org/) et [Git](https://git-scm.com/).
+Assurez-vous d'avoir installé [Git](https://git-scm.com/).
 
 ### 1. Clonage du projet
 
 ```bash
-git clone [https://github.com/VOTRE_PSEUDO/VOTRE_REPO.git](https://github.com/VOTRE_PSEUDO/VOTRE_REPO.git)
-cd VOTRE_REPO
+git clone [https://github.com/AbbassiNabil/To-do-list.git](https://github.com/AbbassiNabil/To-do-list.git)
+cd To-do-list
 ```
-````
