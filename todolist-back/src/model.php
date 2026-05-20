@@ -49,3 +49,13 @@ function actPUT(){
             http_response_code(200);
                 return echo json_encode(["message" => "Update - ressource créée avec succès"]);
 }
+
+// Task functions
+
+function readTask($i){
+    $stmt = $database->prepare('SELECT * FROM todo WHERE todolist_id= ?');
+            $stmt->execute(array($i));
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            http_response_code(201);
+            return json_encode($result);
+}

@@ -12,6 +12,11 @@ switch(true){
             break;
     }
 
+    case $method == 'GET' && $uri == "/todo"{
+        function readTask($taskId);
+            break;
+    }
+
     case $method == 'POST' && $uri == "/todolist"{
         function insertList();
             break;

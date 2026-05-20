@@ -96,7 +96,7 @@ class Todo
      * @return void
     !*/
 
-    public function __set(string $name, mixed $value)
+    public function getListId(string $name, mixed $value)
     {
         if (is_string($value) and $name == '_title' or $name == '_description') {
             $this->$name = $value;
