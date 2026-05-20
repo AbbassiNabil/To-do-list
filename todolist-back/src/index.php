@@ -3,17 +3,21 @@ require_once 'model.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
+$parts = explode('/', $uri);
 
 
 global $database;
-
-switch (true) {
-    case $method == 'GET' && $uri == "/todolist":
-        readList();
+switch(true){
+    case $method == 'GET' && $_GET["action"] == "/todolist":
+        echo readList($database);
         break;
+        
+    case $method == 'POST' && $_POST["action"] == "/todolist" :
+        insertList();
+            break;
 
-    case $method == 'GET' && $uri == "/todo":
-        readTask($_GET["id"]);
+    case $method == 'PUT' && $_PUT["action"] == "/todolist/{uuid}/todo" :
+        updList();
         break;
 
     case $method == 'POST' && $uri == "/todolist":
@@ -80,3 +84,4 @@ switch (true) {
 //     default:
 //         break;
 // }
+?>

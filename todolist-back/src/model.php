@@ -1,18 +1,16 @@
 <?php
-require_once 'repositoryFunction.php';
 
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'db');
 define('DB_PORT', '3306');
 define('DB_DATABASE', 'todolist-db');
-define('DB_USERNAME', 'user');
-define('DB_PASSWORD', 'password');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'root');
 
-function connexion(): PDO
-{
+function connexion() : PDO {
     try {
         $database = new PDO('mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_DATABASE, DB_USERNAME, DB_PASSWORD);
-    } catch (PDOException $e) {
-        die('Erreur: ' . $e->getMessage() . '</br>');
+    } catch (PDOException $e){
+        die('Erreur: '.$e->getMessage(). '</br>');
     }
     return $database;
 }
@@ -43,9 +41,9 @@ function insertList()
     return json_encode(["message" => "Created - ressource créée avec succès"]);
 }
 
-function actPUT()
+function updList()
 {
-    global $database;
+    global $database; //Obligatoire pour les variables créer en extérieur de la fonction
     $body = json_decode(file_get_contents('php://input'), true);
     $stmt = $database->prepare("UPDATE todo SET title = :title, description = :description, done = :done WHERE id = :id");
     $stmt->execute([
