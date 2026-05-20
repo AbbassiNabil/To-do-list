@@ -6,11 +6,12 @@ define('DB_DATABASE', 'todolist-db');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', 'root');
 
-function connexion() : PDO {
+function connexion(): PDO
+{
     try {
         $database = new PDO('mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_DATABASE, DB_USERNAME, DB_PASSWORD);
-    } catch (PDOException $e){
-        die('Erreur: '.$e->getMessage(). '</br>');
+    } catch (PDOException $e) {
+        die('Erreur: ' . $e->getMessage() . '</br>');
     }
     return $database;
 }
@@ -31,25 +32,19 @@ function insertList()
 {
     global $database;
     $body = json_decode(file_get_contents('php://input'), true);
-    $stmt = $database->prepare('INSERT INTO todo (title, description, done) VALUES (:title, :description, :done)'); //Paramétres nommés
+    $stmt = $database->prepare('INSERT INTO todolist (id, name, logo) VALUES (:id, :name, :logo)'); //Parametres nommés
     $stmt->execute([
-        ':title' => $body['title'],
-        ':description' => $body['description'],
-        ':done' => $body['done']
+        ':id' => $body['id'],
+        ':name' => $body['name'],
+        ':logo' => $body['logo']
     ]);
     http_response_code(201);
     return json_encode(["message" => "Created - ressource créée avec succès"]);
 }
 
-<<<<<<< HEAD
-function actPUT()
-{
-    global $database;
-=======
 function updList()
 {
     global $database; //Obligatoire pour les variables créer en extérieur de la fonction
->>>>>>> main
     $body = json_decode(file_get_contents('php://input'), true);
     $stmt = $database->prepare("UPDATE todo SET title = :title, description = :description, done = :done WHERE id = :id");
     $stmt->execute([

@@ -7,21 +7,17 @@ $parts = explode('/', $uri);
 
 
 global $database;
-switch(true){
+switch (true) {
     case $method == 'GET' && $_GET["action"] == "/todolist":
         echo readList($database);
         break;
-        
-    case $method == 'POST' && $_POST["action"] == "/todolist" :
-        insertList();
-            break;
 
-    case $method == 'PUT' && $_PUT["action"] == "/todolist/{uuid}/todo" :
-        updList();
+    case $method == 'POST' && $_GET["action"] == "/todolist":
+        insertList();
         break;
 
-    case $method == 'POST' && $uri == "/todolist":
-        insertList();
+    case $method == 'PUT' && $_PUT["action"] == "/todolist/{uuid}/todo":
+        updList();
         break;
 
     default:
@@ -79,9 +75,4 @@ switch(true){
 //         break;
 //     default:
 //         break;
-<<<<<<< HEAD
 // }
-=======
-// }
-?>
->>>>>>> main
