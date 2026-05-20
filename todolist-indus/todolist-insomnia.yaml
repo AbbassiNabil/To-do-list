@@ -1,0 +1,76 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: My first collection
+meta:
+  id: wrk_b00dcf1d204342378fe4f61a94b041b0
+  created: 1779275469976
+  modified: 1779275469976
+  description: ""
+collection:
+  - name: todolist
+    meta:
+      id: fld_f725562e84684d9cb753aab7f9808d87
+      created: 1779276022048
+      modified: 1779276022048
+      sortKey: -1779276022049
+      description: ""
+    children:
+      - url: http://localhost/todolist/1787adca-2cf6-4cd7-afa1-20af702cd431/todo/cbc10bfd-02b2-4db9-92ac-80714f882f4a
+        name: GET TODO
+        meta:
+          id: req_fedde2a178bd453b9cab9e1553ec00b8
+          created: 1779275470071
+          modified: 1779276030367
+          isPrivate: false
+          description: ""
+          sortKey: -1779276027935
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/todolist/1787adca-2cf6-4cd7-afa1-20af702cd431
+        name: GET TODOLIST
+        meta:
+          id: req_06a100058f924018bf457b3adb30e76b
+          created: 1779275874355
+          modified: 1779276027847
+          isPrivate: false
+          description: ""
+          sortKey: -1779276027835
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_9fc6fc6acb0006ee4e3c885fbe26ae1958dfa2de
+    created: 1779275469980
+    modified: 1779275469980
+environments:
+  name: Base Environment
+  meta:
+    id: env_9fc6fc6acb0006ee4e3c885fbe26ae1958dfa2de
+    created: 1779275469978
+    modified: 1779275469978
+    isPrivate: false
