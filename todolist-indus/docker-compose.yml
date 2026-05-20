@@ -14,12 +14,11 @@ services:
       - ./db-init:/docker-entrypoint-initdb.d
 
   nginx:
-    devcontainer:
-      build:
-        context: /todolist-front/src
-        dockerfile: Dockerfile
-      volumes:
-        - nginx-data:/
+    build:
+      context: ../todolist-front/
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
