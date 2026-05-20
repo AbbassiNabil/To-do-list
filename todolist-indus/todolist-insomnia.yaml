@@ -1,0 +1,231 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: My first collection
+meta:
+  id: wrk_b00dcf1d204342378fe4f61a94b041b0
+  created: 1779275469976
+  modified: 1779275469976
+  description: ""
+collection:
+  - name: todolist
+    meta:
+      id: fld_f725562e84684d9cb753aab7f9808d87
+      created: 1779276022048
+      modified: 1779277381464
+      sortKey: -1779277058269
+      description: ""
+    children:
+      - url: http://localhost/todolist/1787adca-2cf6-4cd7-afa1-20af702cd431/todo/cbc10bfd-02b2-4db9-92ac-80714f882f4a
+        name: GET TODO
+        meta:
+          id: req_fedde2a178bd453b9cab9e1553ec00b8
+          created: 1779275470071
+          modified: 1779276030367
+          isPrivate: false
+          description: ""
+          sortKey: -1779276027935
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/todolist/1787adca-2cf6-4cd7-afa1-20af702cd431
+        name: GET TODOLIST
+        meta:
+          id: req_06a100058f924018bf457b3adb30e76b
+          created: 1779275874355
+          modified: 1779276027847
+          isPrivate: false
+          description: ""
+          sortKey: -1779276027835
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/todolist
+        name: CREATE TODOLIST
+        meta:
+          id: req_2e3ea834037b4e6cb9555a0b63317a74
+          created: 1779276302659
+          modified: 1779276413800
+          isPrivate: false
+          description: ""
+          sortKey: -1779276028035
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	 "id": "e89bc0b3-b915-4b5a-a147-e60c79608dc4",
+               "name": "My new list",
+               "logo": "https://www.svgrepo.com/show/356803/expired.svg"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/todo
+        name: CREATE TODO
+        meta:
+          id: req_6337ae488d1a44cca56ee9a611f27570
+          created: 1779276644864
+          modified: 1779276899340
+          isPrivate: false
+          description: ""
+          sortKey: -1779276028135
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{ "id": "522ba3a1-35be-4d0b-8df7-b6e569b729f1", "title": "compa",
+            "description": "il compare sta messo male",  "done": "false" }'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/todolist/1787adca-2cf6-4cd7-afa1-20af702cd431/todo/cbc10bfd-02b2-4db9-92ac-80714f882f4a
+        name: PUT TODO
+        meta:
+          id: req_b7779629179a4cd0ad118936200f5902
+          created: 1779277058169
+          modified: 1779279053805
+          isPrivate: false
+          description: ""
+          sortKey: -1779276028235
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "done": "true"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/todolist/1787adca-2cf6-4cd7-afa1-20af702cd431/todo/cbc10bfd-02b2-4db9-92ac-80714f882f4a
+        name: DELETE TODO
+        meta:
+          id: req_f26a08ab512f4c95baf5b9395729ab9c
+          created: 1779277795306
+          modified: 1779277890765
+          isPrivate: false
+          description: ""
+          sortKey: -1779276028335
+        method: DELETE
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "message": "La tâche a bien été supprimée."
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost/todolist/1787adca-2cf6-4cd7-afa1-20af702cd431
+        name: DELETE TODOLIST
+        meta:
+          id: req_33ee23472f70466ca9e1f3cfd34c13f2
+          created: 1779280480043
+          modified: 1779280647959
+          isPrivate: false
+          description: ""
+          sortKey: -1779276028435
+        method: DELETE
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "message": "La list a bien été supprimée."
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_9fc6fc6acb0006ee4e3c885fbe26ae1958dfa2de
+    created: 1779275469980
+    modified: 1779275469980
+environments:
+  name: Base Environment
+  meta:
+    id: env_9fc6fc6acb0006ee4e3c885fbe26ae1958dfa2de
+    created: 1779275469978
+    modified: 1779275469978
+    isPrivate: false
