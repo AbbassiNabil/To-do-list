@@ -15,12 +15,12 @@ collection:
       sortKey: -1779277058269
       description: ""
     children:
-      - url: http://localhost/todolist/1787adca-2cf6-4cd7-afa1-20af702cd431/todo/cbc10bfd-02b2-4db9-92ac-80714f882f4a
+      - url: http://localhost?action=/todolist-4cd7-afa1-20af702cd431/todo/cbc10bfd-02b2-4db9-92ac-80714f882f4a
         name: GET TODO
         meta:
           id: req_fedde2a178bd453b9cab9e1553ec00b8
           created: 1779275470071
-          modified: 1779276030367
+          modified: 1779282379265
           isPrivate: false
           description: ""
           sortKey: -1779276027935
@@ -38,12 +38,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost/todolist/1787adca-2cf6-4cd7-afa1-20af702cd431
+      - url: http://localhost?action=/todolist/1787adca-2cf6-4cd7-afa1-20af702cd431
         name: GET TODOLIST
         meta:
           id: req_06a100058f924018bf457b3adb30e76b
           created: 1779275874355
-          modified: 1779276027847
+          modified: 1779282397166
           isPrivate: false
           description: ""
           sortKey: -1779276027835
@@ -61,12 +61,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost/todolist
+      - url: http://localhost:7564?action=/todolist
         name: CREATE TODOLIST
         meta:
           id: req_2e3ea834037b4e6cb9555a0b63317a74
           created: 1779276302659
-          modified: 1779276413800
+          modified: 1779283519204
           isPrivate: false
           description: ""
           sortKey: -1779276028035
@@ -94,12 +94,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost/todo
+      - url: http://localhost:7564?action=/todo
         name: CREATE TODO
         meta:
           id: req_6337ae488d1a44cca56ee9a611f27570
           created: 1779276644864
-          modified: 1779276899340
+          modified: 1779283539659
           isPrivate: false
           description: ""
           sortKey: -1779276028135
@@ -123,12 +123,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost/todolist/1787adca-2cf6-4cd7-afa1-20af702cd431/todo/cbc10bfd-02b2-4db9-92ac-80714f882f4a
+      - url: http://localhost:7564?action=/todolist/1787adca-2cf6-4cd7-afa1-20af702cd431/todo/cbc10bfd-02b2-4db9-92ac-80714f882f4a
         name: PUT TODO
         meta:
           id: req_b7779629179a4cd0ad118936200f5902
           created: 1779277058169
-          modified: 1779279053805
+          modified: 1779283553377
           isPrivate: false
           description: ""
           sortKey: -1779276028235
@@ -154,12 +154,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost/todolist/1787adca-2cf6-4cd7-afa1-20af702cd431/todo/cbc10bfd-02b2-4db9-92ac-80714f882f4a
+      - url: http://localhost:7564?action=/todolist/1787adca-2cf6-4cd7-afa1-20af702cd431/todo/cbc10bfd-02b2-4db9-92ac-80714f882f4a
         name: DELETE TODO
         meta:
           id: req_f26a08ab512f4c95baf5b9395729ab9c
           created: 1779277795306
-          modified: 1779277890765
+          modified: 1779283567003
           isPrivate: false
           description: ""
           sortKey: -1779276028335
@@ -216,12 +216,60 @@ collection:
             send: true
             store: true
           rebuildPath: true
+      - url: http://localhost:7564?action=/todolist
+        name: GET ALL TODOLIST
+        meta:
+          id: req_686f8b6998654bee82130e136bbf6fc5
+          created: 1779282411688
+          modified: 1779282723987
+          isPrivate: false
+          description: ""
+          sortKey: -1779276028535
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
 cookieJar:
   name: Default Jar
   meta:
     id: jar_9fc6fc6acb0006ee4e3c885fbe26ae1958dfa2de
     created: 1779275469980
-    modified: 1779275469980
+    modified: 1779282709104
+  cookies:
+    - id: 9505111d-3307-46d5-a3f3-d7ddc25b3a05
+      key: PHPSESSID
+      value: rnie5h9rdfabu8omh7kkedimr9
+      domain: localhost
+      path: /
+      secure: false
+      httpOnly: false
+      hostOnly: true
+    - id: 0eaaf017-512d-40c5-94a3-ad3757a97043
+      key: phpMyAdmin
+      value: 75b7bd341706590659860f0469d0475b
+      domain: localhost
+      path: /
+      secure: false
+      httpOnly: true
+      hostOnly: true
+    - id: fc70af74-79ad-4ca7-8717-17d0c5795a15
+      key: pma_lang
+      value: en
+      domain: localhost
+      path: /
+      secure: false
+      httpOnly: true
+      hostOnly: true
 environments:
   name: Base Environment
   meta:
