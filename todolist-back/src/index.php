@@ -3,23 +3,24 @@ require_once 'model.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
+$parts = explode('/', $uri);
 
 global $database;
-
 switch(true){
-    case $method == 'GET' && $uri == "/todo"{
-        function readList();
-            break;
-    }
-
-    case $method == 'POST' && $uri == "/todolist"{
+    case $method == 'GET' && $_GET["action"] == "/todolist":
+        echo readList($database);
+        break;
+        
+    case $method == 'POST' && $uri == "/todolist" :
         function insertList();
             break;
-    }
 
+    case $method == 'PUT' && $uri == "/todolist/{uuid}/todo" :
+        function updList();
+    
     default : 
-            http_response_code(404);
-            echo json_encode(["message" => "Route non trouvée"]);
+        http_response_code(404);
+        echo json_encode(["message" => "Route non trouvée"]);
 
 }
 // switch ($method) { 
@@ -74,3 +75,4 @@ switch(true){
 //     default:
 //         break;
 // }
+?>

@@ -1,11 +1,10 @@
 <?php
-require_once 'repositoryFunction.php';
 
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'db');
 define('DB_PORT', '3306');
 define('DB_DATABASE', 'todolist-db');
-define('DB_USERNAME', 'user');
-define('DB_PASSWORD', 'password');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'root');
 
 function connexion() : PDO {
     try {
@@ -18,7 +17,7 @@ function connexion() : PDO {
 
 $database = connexion();
 
-function readListT(){
+function readList($database){
     $stmt = $database->prepare('SELECT * FROM todolist');
             $stmt->execute(array());
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -35,17 +34,25 @@ function insertList(){
                 ':done' => $body['done']
             ]);
             http_response_code(201);
-                return echo json_encode(["message" => "Created - ressource créée avec succès"]);
+                return json_encode(["message" => "Created - ressource créée avec succès"]);
 }
 
-function actPUT(){
-    $body = json_decode(file_get_contents('php://input'), true); 
+function updList(){
+            $body = json_decode(file_get_contents('php://input'), true); 
+            $uri = "/todolist/abc-123/todo";
+            $parts = explode('/', $uri);
             $stmt = $database->prepare("UPDATE todo SET title = :title, description = :description, done = :done WHERE id = :id");
             $stmt->execute([
                 ':title' => $body['title'],
                 ':description' => $body['description'],
-                ':done' => $body['done']
+                ':done' => $body['done'],
+                ':id' => $uuid['id']
             ]);
             http_response_code(200);
-                return echo json_encode(["message" => "Update - ressource créée avec succès"]);
+                return json_encode(["message" => "Update - ressource créée avec succès"]);
+            
+}
+
+function delList(){
+
 }

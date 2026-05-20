@@ -1,4 +1,16 @@
 services:
+  backend:
+    image: php:8.1.31-apache
+    ports:
+      - "80:80"
+    volumes:
+      - ../todolist-back/src:/var/www/html
+    build:
+      context: ../todolist-back/
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
   db:
     image: mysql:latest
     restart: always
@@ -12,6 +24,12 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
       - ./db-init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
