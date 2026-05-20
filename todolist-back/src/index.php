@@ -20,10 +20,6 @@ switch (true) {
         updList();
         break;
 
-    case $method == 'POST' && $uri == "/todolist":
-        insertList();
-        break;
-
     default:
         http_response_code(404);
         echo json_encode(["message" => "Route non trouvée"]);

@@ -32,11 +32,11 @@ function insertList()
 {
     global $database;
     $body = json_decode(file_get_contents('php://input'), true);
-    $stmt = $database->prepare('INSERT INTO todo (title, description, done) VALUES (:title, :description, :done)'); //Paramétres nommés
+    $stmt = $database->prepare('INSERT INTO todolist (id, name, logo) VALUES (:id, :name, :logo)'); //Parametres nommés
     $stmt->execute([
-        ':title' => $body['title'],
-        ':description' => $body['description'],
-        ':done' => $body['done']
+        ':id' => $body['id'],
+        ':name' => $body['name'],
+        ':logo' => $body['logo']
     ]);
     http_response_code(201);
     return json_encode(["message" => "Created - ressource créée avec succès"]);
