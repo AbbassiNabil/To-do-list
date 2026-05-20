@@ -88,22 +88,4 @@ class Todo
             throw new \Exception('Not implemented');
         }
     }
-
-    /**
-     * Commentaire PHPDoc
-     * @param string $name Le nom de l'attribut
-     * @param mixed $value La nouvelle valeur de l'attribut
-     * @return void
-    !*/
-
-    public function __set(string $name, mixed $value)
-    {
-        if (is_string($value) and $name == '_title' or $name == '_description') {
-            $this->$name = $value;
-        } elseif ($name == '_done' and $value == 'true' or $value == 'false') {
-            $this->$name = $value;
-        } else {
-            throw new \Exception('Not implemented');
-        }
-    }
 }
