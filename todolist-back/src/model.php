@@ -41,7 +41,7 @@ function insertList()
     return json_encode(["message" => "Created - ressource créée avec succès"]);
 }
 
-function actPUT()
+function updList()
 {
     global $database;
     $body = json_decode(file_get_contents('php://input'), true);

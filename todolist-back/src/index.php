@@ -13,15 +13,12 @@ switch(true){
         break;
         
     case $method == 'POST' && $uri == "/todolist" :
-        function insertList();
+        insertList();
             break;
 
     case $method == 'PUT' && $uri == "/todolist/{uuid}/todo" :
-        function updList();
-    
-    default : 
-        http_response_code(404);
-        echo json_encode(["message" => "Route non trouvée"]);
+        updList();
+        break;
 
     case $method == 'POST' && $uri == "/todolist":
         insertList();
