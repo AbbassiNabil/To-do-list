@@ -1,0 +1,25 @@
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    container_name: todolist-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: todolist-db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    command: mysqld
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./db-init:/docker-entrypoint-initdb.d
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "8080:80"
+volumes:
+  mysql-data:
