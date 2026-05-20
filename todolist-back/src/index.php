@@ -16,9 +16,12 @@ switch (true) {
         readTask($_GET["id"]);
         break;
 
-
     case $method == 'POST' && $uri == "/todolist":
         insertList();
+        break;
+
+    case $method == 'POST' && $uri == "/todo":
+        insertTask($_GET["id"]);
         break;
 
     default:

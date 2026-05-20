@@ -68,3 +68,17 @@ function readTask($i)
     http_response_code(201);
     return json_encode($result);
 }
+
+function insertTask($i)
+{
+    global $database;
+    $body = json_decode(file_get_contents('php://input'), true);
+    $stmt = $database->prepare('INSERT INTO todo (title, description, listId) VALUES (:title, :description, ?)'); //Paramétres nommés
+    $stmt->execute([
+        ':title' => $body['title'],
+        ':description' => $body['description'],
+        $i,
+    ]);
+    http_response_code(201);
+    return json_encode(["message" => "Created - ressource créée avec succès"]);
+}
