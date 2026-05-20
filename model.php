@@ -18,14 +18,15 @@ function connexion() : PDO {
 
 $database = connexion();
 
-function actGET(){
-    $stmt = $database->prepare('SELECT * FROM todo');
-            $stmt->execute();
+function readListT(){
+    $stmt = $database->prepare('SELECT * FROM todolist');
+            $stmt->execute(array());
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
+            http_response_code(201);
+            return json_encode($result);
 }
 
-function actPOST(){
+function insertList(){
     $body = json_decode(file_get_contents('php://input'), true); 
             $stmt = $database->prepare('INSERT INTO todo (title, description, done) VALUES (:title, :description, :done)'); //Paramétres nommés
             $stmt->execute([
